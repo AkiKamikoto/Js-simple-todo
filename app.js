@@ -4,11 +4,11 @@ const createBtn = document.getElementById("create")
 
 const notes = [
     {
-        title: "first",
+        title: "My first todo",
         complete: false
     },
     {
-        title: "second",
+        title: "Remove me, iam completed",
         complete: true
     }
 ]
