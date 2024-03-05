@@ -42,8 +42,21 @@ button{
 li{
  display: flex;
  justify-content: space-between;
+ align-items:center;
  padding: 5px;
  margin:5px;
  border-radius: 10px;
  background-color: black;
+}
+
+li span {
+    padding-left: 10px;
+}
+
+.not-complete{
+
+}
+
+.complete{
+    
 }

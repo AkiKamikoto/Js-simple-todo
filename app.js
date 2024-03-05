@@ -23,11 +23,11 @@ function render(){
 }
 
 function getTemplate(note, index){
-    return `<li>
+    return `<li class = "${note.complete ? "complete" : "not-complete"}">
     <span class = "${note.complete ? "text-decoration-line-through" : ""}">${note.title}</span>
     <span>
-        <span data-index="${index}" data-type="togle" class="btn btn-small btn-success"></span>
-        <span data-index="${index}" data-type="remove" class="btn btn-small btn-danger"> </span>
+        <span data-index="${index}"data-type="togle" class="btn btn-small btn-success">Complete</span>
+        <span data-index="${index}"data-type="remove" class="btn btn-small btn-danger">Delete</span>
     </span>
 </li>`
 }
