@@ -1,6 +1,9 @@
 const listElement = document.getElementById("list")
 const inputElement = document.getElementById("title")
 const createBtn = document.getElementById("create")
+const deleteElement = document.getElementById("delete-id")
+const popUpDeleteElement = document.getElementById("pop-up-section")
+
 
 const notes = [
     {
@@ -33,8 +36,19 @@ function getTemplate(note, index){
 }
 render()
 
+function getPopUpDelete(title,index){
+    return `
+
+    <div id="delete-pop-up">
+        <p>Заметка <span id="delete-id">${title}</span> была удалена</p>
+    </div>
+`
+}
+
+
+
 createBtn.onclick = function(){
-    if(inputElement.value === 0){
+    if(inputElement.value == 0){
         return
     }
 
@@ -46,7 +60,10 @@ createBtn.onclick = function(){
     notes.push(newNote)
     render()
     inputElement.value = ""
+
 }
+
+const popUpDelete = document.getElementById("delete-pop-up")
 
 listElement.onclick = function(event) {
     if (event.target.dataset.index){
@@ -56,8 +73,14 @@ listElement.onclick = function(event) {
         if (type === "togle"){
             notes[index].complete = !notes[index].complete
         } else if (type === "remove"){
+            
+            popUpDeleteElement.insertAdjacentHTML("beforeend",getPopUpDelete(notes[index].title))
+
             notes.splice(index,1)
+
+
         }
         render()
     }
 }
+
