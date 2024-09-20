@@ -21,10 +21,10 @@ const notes = [
 function render(){
     listElement.innerHTML = ""
 
-    notes.foreach(note,index)
-    {
-        listElement.insertAdjacentHTML("beforend",getTemplate(note,index))
-    }
+    notes.foreach((note,index) => {
+        listElement.insertAdjacentHTML("beforend",getTemplate(note,index));
+    });
+
     //for(let i = 0; i <= notes.length -1; i++){
       //  listElement.insertAdjacentHTML("beforeend",getTemplate(notes[i], i))
     //}
